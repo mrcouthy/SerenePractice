@@ -1648,6 +1648,7 @@
     <Compile Include="Modules\Common\Imports\ClientTypes\MovieDB.MovieCastEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20160802_115400_Employee.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20160603_205900_PersonMovieImages.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20160528_141600_PersonAndMovieCast.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20160528_115400_MovieGenres.cs" />
