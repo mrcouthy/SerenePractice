@@ -1601,6 +1601,12 @@
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MovieDB.MovieCastForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <Content Include="Modules\MovieTutorial\Employee\EmployeeIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\EmployeeRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\EmployeeService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\EmployeeForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MovieTutorial\Employee\EmployeeGrid.ts" />
+    <TypeScriptCompile Include="Modules\MovieTutorial\Employee\EmployeeDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1766,6 +1772,12 @@
     <Compile Include="Modules\MovieDB\MovieCast\MovieCastColumns.cs" />
     <Compile Include="Modules\MovieDB\MovieCast\MovieCastForm.cs" />
     <Compile Include="Modules\MovieDB\MovieCast\MovieCastRepository.cs" />
+    <Compile Include="Modules\MovieTutorial\Employee\EmployeeRow.cs" />
+    <Compile Include="Modules\MovieTutorial\Employee\EmployeeColumns.cs" />
+    <Compile Include="Modules\MovieTutorial\Employee\EmployeeForm.cs" />
+    <Compile Include="Modules\MovieTutorial\Employee\EmployeeRepository.cs" />
+    <Compile Include="Modules\MovieTutorial\Employee\EmployeeEndpoint.cs" />
+    <Compile Include="Modules\MovieTutorial\Employee\EmployeePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

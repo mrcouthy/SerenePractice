@@ -1,4 +1,24 @@
-﻿declare namespace MovieTutorial.MovieDB {
+﻿declare namespace MovieTutorial {
+    class EmployeeDialog extends Serenity.EntityDialog<EmployeeRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: EmployeeForm;
+    }
+}
+declare namespace MovieTutorial {
+    class EmployeeGrid extends Serenity.EntityGrid<EmployeeRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof EmployeeDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace MovieTutorial.MovieDB {
     class PersonDialog extends Serenity.EntityDialog<PersonRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -623,6 +643,52 @@ declare namespace MovieTutorial.Common {
         PreferenceType?: string;
         Name?: string;
         Value?: string;
+    }
+}
+declare namespace MovieTutorial {
+    class EmployeeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface EmployeeForm {
+        Name: Serenity.StringEditor;
+        Address: Serenity.IntegerEditor;
+        Email: Serenity.StringEditor;
+    }
+}
+declare namespace MovieTutorial {
+    interface EmployeeRow {
+        EmployeeId?: number;
+        Name?: string;
+        Address?: number;
+        Email?: string;
+    }
+    namespace EmployeeRow {
+        const idProperty: string;
+        const nameProperty: string;
+        const localTextPrefix: string;
+        namespace Fields {
+            const EmployeeId: any;
+            const Name: any;
+            const Address: any;
+            const Email: any;
+        }
+    }
+}
+declare namespace MovieTutorial {
+    namespace EmployeeService {
+        const baseUrl: string;
+        function Create(request: Serenity.SaveRequest<EmployeeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<EmployeeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<EmployeeRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<EmployeeRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
     }
 }
 declare namespace MovieTutorial.Membership {

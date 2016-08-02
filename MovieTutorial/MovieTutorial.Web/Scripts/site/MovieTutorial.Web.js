@@ -11,6 +11,46 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var MovieTutorial;
 (function (MovieTutorial) {
+    var EmployeeDialog = (function (_super) {
+        __extends(EmployeeDialog, _super);
+        function EmployeeDialog() {
+            _super.apply(this, arguments);
+            this.form = new MovieTutorial.EmployeeForm(this.idPrefix);
+        }
+        EmployeeDialog.prototype.getFormKey = function () { return MovieTutorial.EmployeeForm.formKey; };
+        EmployeeDialog.prototype.getIdProperty = function () { return MovieTutorial.EmployeeRow.idProperty; };
+        EmployeeDialog.prototype.getLocalTextPrefix = function () { return MovieTutorial.EmployeeRow.localTextPrefix; };
+        EmployeeDialog.prototype.getNameProperty = function () { return MovieTutorial.EmployeeRow.nameProperty; };
+        EmployeeDialog.prototype.getService = function () { return MovieTutorial.EmployeeService.baseUrl; };
+        EmployeeDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], EmployeeDialog);
+        return EmployeeDialog;
+    }(Serenity.EntityDialog));
+    MovieTutorial.EmployeeDialog = EmployeeDialog;
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var EmployeeGrid = (function (_super) {
+        __extends(EmployeeGrid, _super);
+        function EmployeeGrid(container) {
+            _super.call(this, container);
+        }
+        EmployeeGrid.prototype.getColumnsKey = function () { return 'Employee'; };
+        EmployeeGrid.prototype.getDialogType = function () { return MovieTutorial.EmployeeDialog; };
+        EmployeeGrid.prototype.getIdProperty = function () { return MovieTutorial.EmployeeRow.idProperty; };
+        EmployeeGrid.prototype.getLocalTextPrefix = function () { return MovieTutorial.EmployeeRow.localTextPrefix; };
+        EmployeeGrid.prototype.getService = function () { return MovieTutorial.EmployeeService.baseUrl; };
+        EmployeeGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], EmployeeGrid);
+        return EmployeeGrid;
+    }(Serenity.EntityGrid));
+    MovieTutorial.EmployeeGrid = EmployeeGrid;
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
     var MovieDB;
     (function (MovieDB) {
         var PersonDialog = (function (_super) {
@@ -1340,6 +1380,46 @@ var MovieTutorial;
             });
         })(UserPreferenceService = Common.UserPreferenceService || (Common.UserPreferenceService = {}));
     })(Common = MovieTutorial.Common || (MovieTutorial.Common = {}));
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var EmployeeForm = (function (_super) {
+        __extends(EmployeeForm, _super);
+        function EmployeeForm() {
+            _super.apply(this, arguments);
+        }
+        EmployeeForm.formKey = 'Employee';
+        return EmployeeForm;
+    }(Serenity.PrefixedContext));
+    MovieTutorial.EmployeeForm = EmployeeForm;
+    [['Name', function () { return Serenity.StringEditor; }], ['Address', function () { return Serenity.IntegerEditor; }], ['Email', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(EmployeeForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var EmployeeRow;
+    (function (EmployeeRow) {
+        EmployeeRow.idProperty = 'EmployeeId';
+        EmployeeRow.nameProperty = 'Name';
+        EmployeeRow.localTextPrefix = 'Employee';
+        var Fields;
+        (function (Fields) {
+        })(Fields = EmployeeRow.Fields || (EmployeeRow.Fields = {}));
+        ['EmployeeId', 'Name', 'Address', 'Email'].forEach(function (x) { return Fields[x] = x; });
+    })(EmployeeRow = MovieTutorial.EmployeeRow || (MovieTutorial.EmployeeRow = {}));
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var EmployeeService;
+    (function (EmployeeService) {
+        EmployeeService.baseUrl = 'Employee';
+        var Methods;
+        (function (Methods) {
+        })(Methods = EmployeeService.Methods || (EmployeeService.Methods = {}));
+        ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+            EmployeeService[x] = function (r, s, o) { return Q.serviceRequest(EmployeeService.baseUrl + '/' + x, r, s, o); };
+            Methods[x] = EmployeeService.baseUrl + '/' + x;
+        });
+    })(EmployeeService = MovieTutorial.EmployeeService || (MovieTutorial.EmployeeService = {}));
 })(MovieTutorial || (MovieTutorial = {}));
 var MovieTutorial;
 (function (MovieTutorial) {
