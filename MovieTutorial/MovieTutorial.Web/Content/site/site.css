@@ -7211,3 +7211,12 @@ section.content > .s-DataGrid {
 .s-MovieDB-MovieCastEditDialog .s-PropertyGrid .categories {
   height: 120px;
 }
+/* ------------------------------------------------------------------------- */
+/* APPENDED BY CODE GENERATOR, MOVE TO CORRECT PLACE AND REMOVE THIS COMMENT */
+/* ------------------------------------------------------------------------- */
+.s-EmployeeDialog > .size {
+  width: 650px;
+}
+.s-EmployeeDialog .caption {
+  width: 150px;
+}
