@@ -29,7 +29,7 @@ namespace MovieTutorial.Entities
             set { Fields.Name[this] = value; }
         }
 
-        [DisplayName("Address"), NotNull]
+        [DisplayName("Address Details"), NotNull]
         public Int32? Address
         {
             get { return Fields.Address[this]; }
