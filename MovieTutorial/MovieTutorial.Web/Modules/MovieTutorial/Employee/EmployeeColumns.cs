@@ -16,6 +16,7 @@ namespace MovieTutorial.Columns
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 EmployeeId { get; set; }
         [EditLink]
+        [DisplayName("Name of Employee"), Width(150), AlignRight]
         public String Name { get; set; }
         public Int32 Address { get; set; }
         public String Email { get; set; }
