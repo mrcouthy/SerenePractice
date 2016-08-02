@@ -36,7 +36,7 @@ namespace MovieTutorial.Entities
             set { Fields.Address[this] = value; }
         }
 
-        [DisplayName("Email"), Size(255)]
+        [DisplayName("Email Address"), Size(255)]
         public String Email
         {
             get { return Fields.Email[this]; }
